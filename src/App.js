@@ -33,8 +33,8 @@ class App extends React.Component {
       id: Date.now(),
       completed: false,
     }
-    this.testState({
-      todo: [this.state.todo, newTodo]
+    this.setState({
+      todo: [...this.state.todo, newTodo]
     })
   }
 
