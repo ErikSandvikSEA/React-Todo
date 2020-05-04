@@ -56,6 +56,17 @@ class App extends React.Component {
     })
   }
 
+  clearCompleted = () => {
+    const partialList = this.state.todo.filter(listItem => {
+     return listItem.completed === false
+      }
+    )
+    this.setState({
+      todo: partialList
+    })
+  }
+
+
   render() {
     return (
       <div>
@@ -66,6 +77,7 @@ class App extends React.Component {
         <TodoList 
           todo={this.state.todo}
           toggleTodo={this.toggleTodo}
+          clearCompleted={this.clearCompleted}
         
         />
       </div>

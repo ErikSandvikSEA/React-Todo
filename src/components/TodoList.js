@@ -11,8 +11,8 @@ const TodoList = (props) => {
                     <Todo key={listItem.id} listItem={listItem} toggleTodo={props.toggleTodo}/>
                     )
                })}
-               <button>
-                    Reset List
+               <button onClick={props.clearCompleted}>
+                    Clear Completed Tasks
                </button>
           </div>
       )
