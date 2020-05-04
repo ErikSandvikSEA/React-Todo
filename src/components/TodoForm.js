@@ -1,6 +1,8 @@
 import React from 'react'
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
+import Box from '@material-ui/core/Box';
+
 
 
 class TodoForm extends React.Component {
@@ -30,12 +32,15 @@ class TodoForm extends React.Component {
 
      render() {
           return (
-               <div className='todoForm'>
+               <Box
+               display='flex'
+               flexDirection='column'
+               alignItems='center' className='todoForm'>
                     <form
                          onSubmit={this.submitForm}
                     >
                          <TextField
-                              id='outlined-basic'
+                         onSubmit={this.submitForm}
                               variant='outlined' 
                               type='text'
                               name='props.task'
@@ -45,13 +50,15 @@ class TodoForm extends React.Component {
 
                          />
                          <Button
+                         onClick={this.submitForm}
                          variant="contained" 
                          color="primary"
+                         size='large'
                          >
                               Add to Your List
                          </Button>
                     </form>
-               </div>
+               </Box>
           )
      }
 

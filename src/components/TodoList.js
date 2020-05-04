@@ -12,20 +12,17 @@ import DoneOutlineIcon from '@material-ui/icons/DoneOutline';
 const TodoList = (props) => {
      return (
           <div className='todoList'>
-               <List>
+               
                {props.todo.map(listItem => {
                     return (
-                         <ListItem button key={listItem.id}>
-                              <ListItemIcon>
-                                   <DoneOutlineIcon/>
-                              </ListItemIcon>
-                    <Todo listItem={listItem} toggleTodo={props.toggleTodo}/>
+                         
+                    <Todo key={listItem.id} listItem={listItem} toggleTodo={props.toggleTodo}/>
                     
-                    </ListItem>
+                  
                     
                     )
                })}
-               </List>
+
                <Button onClick={props.clearCompleted}
                 variant="contained" 
                 color="secondary">
