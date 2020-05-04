@@ -1,4 +1,7 @@
 import React from 'react'
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+
 
 class TodoForm extends React.Component {
      constructor() {
@@ -13,7 +16,7 @@ class TodoForm extends React.Component {
                {
                     taskInput: e.target.value,
                },
-               () => console.log(this.state.taskInput)
+               // () => console.log(this.state.taskInput)
           )
      }
 
@@ -31,7 +34,9 @@ class TodoForm extends React.Component {
                     <form
                          onSubmit={this.submitForm}
                     >
-                         <input 
+                         <TextField
+                              id='outlined-basic'
+                              variant='outlined' 
                               type='text'
                               name='props.task'
                               value={this.state.taskInput}
@@ -39,9 +44,12 @@ class TodoForm extends React.Component {
                               onChange={this.handleChange}
 
                          />
-                         <button>
+                         <Button
+                         variant="contained" 
+                         color="primary"
+                         >
                               Add to Your List
-                         </button>
+                         </Button>
                     </form>
                </div>
           )

@@ -3,6 +3,9 @@ import TodoList from './components/TodoList'
 import TodoForm from './components/TodoForm'
 import './Todo.css'
 
+import Grid from '@material-ui/core/Container';
+import Box from '@material-ui/core/Box';
+
 const todo = [
   {
     task: 'Organize Garage',
@@ -27,6 +30,7 @@ class App extends React.Component {
       todo: todo //can also just be todo, since they are both the same
     }
   }
+
 
   addTodo = todoName => {
     const newTodo = {
@@ -69,18 +73,23 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <Grid container='true'>
         <div className='header'>
         <h2>Productivity App</h2>
-        <TodoForm addTodo={this.addTodo}/>
         </div>
+        <Box
+        boxShadow={3}
+        >
+        <TodoForm addTodo={this.addTodo}/>
         <TodoList 
           todo={this.state.todo}
           toggleTodo={this.toggleTodo}
           clearCompleted={this.clearCompleted}
         
         />
-      </div>
+        </Box>
+      </Grid>
+
     );
   }
 }
