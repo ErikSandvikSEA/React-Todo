@@ -5,6 +5,8 @@ import './Todo.css'
 
 import Grid from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
+import Typography from '@material-ui/core/Typography';
+
 
 const todo = [
   {
@@ -73,12 +75,21 @@ class App extends React.Component {
 
   render() {
     return (
-      <Grid container='true'>
+      <Grid container='true' style={{width: 800}}>
         <div className='header'>
-        <h2>Productivity App</h2>
+        <Typography 
+        variant='h1'
+        align='center'
+        >
+          Productivity App</Typography>
         </div>
         <Box
+        display='flex'
+        flexDirection='column'
+        alignItems='center'
+        style={{padding: 20}}
         boxShadow={3}
+        
         >
         <TodoForm addTodo={this.addTodo}/>
         <TodoList 
